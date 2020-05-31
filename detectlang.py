@@ -1,6 +1,5 @@
 from langdetect import detect
 
-
 class LangDetect:
 
     def __init__(self, text):
@@ -8,18 +7,22 @@ class LangDetect:
 
     def predict(self):
 
-        """Função verifica se o parâmetro texto é do tipo String.
+        """
+        Função verifica se o parâmetro texto é do tipo String.
 
-            >>> detect('“yeah, I’m young, rich, beautiful, and famous. People think rich people are happy.“')
+            >>> lang_detect = LangDetect('“yeah, I’m young, rich, beautiful, and famous. People think rich people are happy.“')
+            >>> lang_detect.predict();
             'en'
 
-            >>> detect('La navicella è entrata in orbita e viaggia verso la Stazione spaziale internazionale (Iss).')
+            >>> lang_detect = LangDetect('La navicella è entrata in orbita e viaggia verso la Stazione spaziale internazionale (Iss).');
+            >>> lang_detect.predict();
             'it'
 
-            >>> detect('Dois ou um')
+            >>> lang_detect = LangDetect('Dois ou um');
+            >>> lang_detect.predict();
             'pt'
-
-            """
+            
+        """
 
         assert isinstance(self.text, str), 'O valor digitado não pode ser de outro tipo, exceto String.'
         return detect(self.text)
