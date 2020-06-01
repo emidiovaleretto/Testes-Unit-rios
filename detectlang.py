@@ -1,10 +1,11 @@
+from dataclasses import dataclass
 from langdetect import detect
 
 
+@dataclass
 class LangDetect:
 
-    def __init__(self, text):
-        self.text = text
+    text: str
 
     def predict(self):
         """
